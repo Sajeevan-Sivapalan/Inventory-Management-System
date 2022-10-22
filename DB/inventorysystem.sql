@@ -15,8 +15,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `item` (
   `productId` int(11) NOT NULL,
   `productName` varchar(20) NOT NULL,
-  `dates` date NOT NULL,
-  `qty` int(11) NOT NULL,
   `pricePU` int(11) NOT NULL,
   `units` int(11) NOT NULL,
   `Total` int(11) NOT NULL
@@ -26,20 +24,20 @@ CREATE TABLE `item` (
 -- Dumping data for table `item`
 --
 
-INSERT INTO `item` (`productId`, `productName`, `dates`, `qty`, `pricePU`, `units`, `Total`) VALUES
-(10000, 'Monitor', '0000-00-00', 0, 50000, 18, 900000),
-(10001, 'CPU', '0000-00-00', 0, 30000, 20, 600000),
-(10002, 'MotherBoard', '0000-00-00', 0, 37000, 18, 666000),
-(10003, 'Ram', '0000-00-00', 0, 9000, 12, 108000),
-(10004, 'Power Supply', '0000-00-00', 0, 15000, 30, 450000),
-(10005, 'Cooling Fan', '0000-00-00', 0, 6000, 23, 138000),
-(10006, 'Hard Drive', '0000-00-00', 0, 10000, 12, 120000),
-(10007, 'Printer', '0000-00-00', 0, 32000, 5, 160000),
-(10008, 'Scanner', '0000-00-00', 0, 22000, 7, 154000),
-(10009, 'Mouse', '0000-00-00', 0, 1000, 19, 19000),
-(10010, 'KeyBoard', '0000-00-00', 0, 1500, 12, 18000),
-(10011, 'PenDrive', '0000-00-00', 0, 520, 16, 8000),
-(10012, 'Ram', '0000-00-00', 0, 5000, 10, 50000);
+INSERT INTO `item` (`productId`, `productName`, `pricePU`, `units`, `Total`) VALUES
+(10000, 'Monitor', 50000, 18, 900000),
+(10001, 'CPU', 30000, 20, 600000),
+(10002, 'MotherBoard', 37000, 18, 666000),
+(10003, 'Ram', 9000, 12, 108000),
+(10004, 'Power Supply', 15000, 30, 450000),
+(10005, 'Cooling Fan', 6000, 23, 138000),
+(10006, 'Hard Drive', 10000, 12, 120000),
+(10007, 'Printer', 32000, 5, 160000),
+(10008, 'Scanner', 22000, 7, 154000),
+(10009, 'Mouse', 1000, 19, 19000),
+(10010, 'KeyBoard', 1500, 12, 18000),
+(10011, 'PenDrive', 520, 16, 8000),
+(10012, 'Ram', 5000, 10, 50000);
 
 -- --------------------------------------------------------
 
@@ -109,18 +107,6 @@ INSERT INTO `user` (`UserID`, `pass`, `fname`, `lname`) VALUES
 --
 ALTER TABLE `item`
   ADD PRIMARY KEY (`productId`);
-
---
--- Indexes for table `purchase`
---
-ALTER TABLE `purchase`
-  ADD PRIMARY KEY (`productID`);
-
---
--- Indexes for table `sales`
---
-ALTER TABLE `sales`
-  ADD PRIMARY KEY (`productID`);
 
 --
 -- Indexes for table `user`
